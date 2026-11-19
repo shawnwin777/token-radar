@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="dot" aria-hidden="true"></span><div><h1>TOKEN RADAR</h1><p class="tag">Which pre-token protocol is worth farming next — and what to do about it.</p></div></div>
+  <div class="stats" id="stats"></div>
+</header>
+<section class="modelbar" id="modelbar"></section>
+<main>
+  <section class="panel controls" aria-label="Filter the board">
+    <label>Search <input id="q" type="search" placeholder="Protocol name or slug…" autocomplete="off"></label>
+    <label>Category <select id="cat"><option value="">All categories</option></select></label>
+    <label>Chain <select id="chain"><option value="">All chains</option></select></label>
+    <label>Scope <select id="scope"><option value="all">All board rows</option><option value="watchlist">Watchlist only</option><option value="early">Early finds only</option></select></label>
+    <label>Sort by <select id="sort"><option value="implied">Implied value</option><option value="tvl">TVL</option><option value="change">7-day change</option><option value="age">Age</option><option value="name">Name A–Z</option></select></label>
+  </section>
+  <p class="count" id="count"></p>
+  <section class="panel" id="boardpanel">
+    <table id="board">
+      <thead><tr>
+        <th data-sort="implied">#</th><th data-sort="name">Protocol</th><th>Category</th><th>Chains</th>
+        <th data-sort="tvl">TVL</th><th data-sort="change">7d</th><th data-sort="age">Age</th><th data-sort="implied">Implied value</th><th>Token</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+  <section class="panel detail" id="detail" aria-label="Protocol detail"></section>
+  <section class="panel live" id="live" aria-label="Protocols whose token already trades"></section>
+  <section class="panel method" id="method" aria-label="How the model works"></section>
+</main>
+<footer><p>Snapshot: DefiLlama protocols at or above $5M TVL, frozen at the as-of date above. “Records no token” means DefiLlama records no token for the protocol — it is not proof that none exists. Implied values are this radar's own claim, never a prediction that a token will be issued or what it will trade at. Nothing here is financial advice.</p></footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
